@@ -3,21 +3,20 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Document</title>
-    @vite(['resources/saas/app.scss', 'resources/js/app.js'])
+    <title>UTS | Tambah Data Mahasiswa</title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-QWTKZyjpPEjISv5WaRU9OFeRpok6YctnYmDr5pNlyT2bRjXh0JMhjY6hW+ALEwIH" crossorigin="anonymous">
 </head>
 <body>
     <div>
         <form method="post" action="@if(isset($mahasiswa))
             {{ route('mahasiswa.update', ['id' => $mahasiswa['id']]) }}
         @else
-            {{ route('mahasiswa.create') }}
+            {{ route('mahasiswa.store') }}
         @endif">
             @csrf
             @if(isset($mahasiswa))
                 <input type="hidden" name="_method" value="put" />
-            @endif
-
+            @endif  
             <table border="1" bgcolor="black">
                 <tr>
                     <td colspan=6 align="center"><h1><font color="white">
@@ -28,20 +27,12 @@
                     @endif</font></h1></td>
                 </tr>
                 <tr>
-                    <td><font color="white">Nama</font></td>
-                    <td colspan=5><input type="text" name="name" size="55" value="{{ $mahasiswa['name'] ?? ''}}"></td>
-                </tr>
-                <tr>
                     <td><font color="white">NIM</font></td>
                     <td colspan=5><input type="text" name="NIM" size="55" value="{{ $mahasiswa['NIM'] ?? ''}}"></td>
                 </tr>
                 <tr>
-                    <td><font color="white">Tempat Lahir</font></td>
-                    <td colspan=5><input type="text" name="tempat_lahir" size="55" value="{{ $mahasiswa['tempat_lahir'] ?? ''}}"></td>
-                </tr>
-                <tr>
-                    <td><font color="white">Tanggal Lahir</font></td>
-                    <td colspan=5><input type="date" name="tanggal_lahir" size="55" value="{{ $mahasiswa['tanggal_lahir'] ?? ''}}"></td>
+                    <td><font color="white">Nama Mahasiswa</font></td>
+                    <td colspan=5><input type="text" name="name" size="55" value="{{ $mahasiswa['name'] ?? ''}}"></td>
                 </tr>
                 <tr>
                     <td><font color="white">Jurusan</font></td>
@@ -65,8 +56,8 @@
                     <td colspan=5><input type="text" name="angkatan" size="55" value="{{ $mahasiswa['angkatan'] ?? ''}}"></td>
                 </tr>
                 <tr>
-                    <td colspan="3" align="center"><input type="submit" value="Create"></td>
-                    <td colspan="3" align="center"><input type="reset" value="Batal"></td>
+                    <td colspan="3" align="center"><input type="submit" value="{{ isset($mahasiswa) ? 'Update' : 'Create' }}"></td>
+                    <td colspan="3" align="center"><input type="reset" value="Batal" onclick="window.history.back()"></td>
                 </tr>
             </table>
         </form>
