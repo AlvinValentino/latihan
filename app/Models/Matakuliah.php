@@ -12,7 +12,8 @@ class Matakuliah extends Model
     protected $fillable = [
         'kode',
         'nama_matakuliah',
-        'angkatan'
+        'angkatan',
+        'jurusan'
     ];
 
     protected $table = 'matakuliah';

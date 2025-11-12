@@ -39,6 +39,23 @@
                     <td colspan=5><input type="text" name="angkatan" size="55" value="{{ $matakuliah['angkatan'] ?? ''}}"></td>
                 </tr>
                 <tr>
+                    <td><font color="white">Jurusan</font></td>
+                    <td colspan=5>
+                        <input type="radio" name="jurusan" value="Bisnis Digital"
+                        @if (($mahasiswa['jurusan'] ?? 'Bisnis Digital') == "Bisnis Digital")
+                        checked
+                        @endif><font color="white">Bisnis Digital</font><br>
+                        <input type="radio" name="jurusan" value="Kewirausahaan"
+                        @if (($mahasiswa['jurusan'] ?? 'Bisnis Digital') == "Kewirausahaan")
+                        checked
+                        @endif><font color="white">Kewirausahaan</font><br>
+                        <input type="radio" name="jurusan" value="Sistem dan Teknologi Informasi"
+                        @if (($mahasiswa['jurusan'] ?? 'Bisnis Digital') == "Sistem dan Teknologi Informasi")
+                        checked
+                        @endif><font color="white">Sistem dan Teknologi Informasi</font><br>
+                    </td>
+                </tr>
+                <tr>
                     <td colspan="3" align="center"><input type="submit" value="{{ isset($matakuliah) ? 'Update' : 'Create' }}"></td>
                     <td colspan="3" align="center"><input type="reset" value="Batal" onclick="window.history.back()"></td>
                 </tr>

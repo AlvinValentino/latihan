@@ -23,6 +23,7 @@
                         <th>Kode</th>
                         <th>Nama Mata Kuliah</th>
                         <th>Angkatan</th>
+                        <th>Jurusan</th>
                         <th>Action</th>
                     </tr>
                 </thead>
@@ -33,6 +34,7 @@
                             <td>{{ $matakuliah->kode }}</td>
                             <td>{{ $matakuliah->nama_matakuliah }}</td>
                             <td>{{ $matakuliah->angkatan }}</td>
+                            <td>{{ $matakuliah->jurusan }}</td>
                             <td class="d-flex gap-3">
                                 <a href="{{ route('mata_kuliah.edit', $matakuliah->id) }}" class="btn btn-warning">Edit</a>
                                 <form action="{{ route('mata_kuliah.destroy', $matakuliah->id) }}" method="post">
@@ -44,7 +46,7 @@
                         </tr>
                     @empty
                         <tr>
-                            <td colspan="4" class="text-center">Tidak ada data mata kuliah</td>
+                            <td colspan="5" class="text-center">Tidak ada data mata kuliah</td>
                         </tr>
                     @endforelse
                 </tbody>

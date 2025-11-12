@@ -14,7 +14,7 @@
 
     <div class="w-full mt-4 d-flex flex-column gap-4">
         @forelse($matakuliahs as $matakuliah)
-        <a href="" class="shadow-sm p-3 text-decoration-none text-black" style="background-color: #F9F9F9;">
+        <a href="{{ route('absensi.absensi', [$angkatan, $matakuliah->kode]) }}" class="shadow-sm p-3 text-decoration-none text-black" style="background-color: #F9F9F9;">
             <h4>{{ $matakuliah->nama_matakuliah }}</h4>
             <span>{{ $matakuliah->kode }}</span>
         </a>

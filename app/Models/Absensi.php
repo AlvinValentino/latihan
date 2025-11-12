@@ -13,5 +13,7 @@ class Absensi extends Model
         'status_absen'
     ];
 
+    protected $dates = ['tanggal_absensi'];
+
     protected $table = 'absensis';
 }

@@ -21,6 +21,7 @@ class MataKuliahController extends Controller
             'kode' => $request->kode,
             'nama_matakuliah' => $request->nama_matakuliah,
             'angkatan' => $request->angkatan,
+            'jurusan' => $request->jurusan,
         ]);
 
         if($data) {
@@ -40,6 +41,7 @@ class MataKuliahController extends Controller
             'kode' => $request->kode,
             'nama_matakuliah' => $request->nama_matakuliah,
             'angkatan' => $request->angkatan,
+            'jurusan' => $request->jurusan,
         ]);
 
         if($data) {

@@ -15,6 +15,7 @@ return new class extends Migration
             $table->uuid('id')->primary();
             $table->string('kode')->unique();
             $table->string('nama_matakuliah');
+            $table->enum('jurusan', ['Bisnis Digital', 'Sistem dan Teknologi Informasi', 'Kewirausahaan']);
             $table->integer('angkatan');
             $table->timestamps();
         });

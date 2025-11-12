@@ -31,4 +31,5 @@ Route::prefix('absensi')->group(function() {
     Route::get('/', [AbsensiController::class, 'index'])->name('absensi.index');
     Route::get('/{angkatan}', [AbsensiController::class, 'pilihMataKuliah'])->name('absensi.pilihMataKuliah');
     Route::get('/{angkatan}/{kode_mk}', [AbsensiController::class, 'absensi'])->name('absensi.absensi');
+    Route::post('/submit/{angkatan}/{kode_mk}', [AbsensiController::class, 'submitAbsensi'])->name('absensi.submitAbsensi');
 });
